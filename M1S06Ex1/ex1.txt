@@ -1,0 +1,3 @@
+Síncrona segue uma fila sem intervalos regulares, quando termina uma tarefa inicia a outra
+
+assíncrona não precisa esperar que uma tarefa termine para iniciar a próxima

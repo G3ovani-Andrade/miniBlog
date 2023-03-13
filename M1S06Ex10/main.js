@@ -15,7 +15,7 @@ function CriarListaPosts(listaPosts,htmlId){
     
         divPost.classList.add("divPosts");
         mensagem.innerHTML = post.body;
-        titulo.innerHTML =  `${post.id} ${post.title}`;
+        titulo.innerHTML =  `${post.title}`;
        
         divPost.onclick = ()=>{
              carregarComentarios(post.id,post.body,post.title)
@@ -27,9 +27,7 @@ function CriarListaPosts(listaPosts,htmlId){
     });
     checarLimit(listaPosts);
 }
-function oi() {
-    console.log("oi");
-}
+
 async function getAllPosts(){
     let novosPosts = await posts();
     CriarListaPosts(novosPosts,"posts");
@@ -62,10 +60,38 @@ async function buscarPost(idPost){
 
 async function carregarComentarios(id,body,title){
     let comentarioPorPost = await buscarPost(id);
+
     correntPost.title = title.replace(/\n/g,'');
     correntPost.body = body.replace(/\n/g,'');
     correntPost.id = id;
-    
-    console.log(correntPost);
-    
+    let tituloModal = document.getElementById("tituloModal");
+    tituloModal.innerHTML = correntPost.title;
+    let bodyModal = document.getElementById("bodyModal");
+    bodyModal.innerHTML = correntPost.body;
+    document.getElementById('modal').style.display = "block";
+    let modal = document.getElementById("listaComentarios");
+    modal.innerHTML ="";
+    comentarioPorPost.map((comentario)=>{
+        let div = document.createElement("div");
+        let nome = document.createElement("p")
+        let email = document.createElement("p")
+        let mensagem = document.createElement("p")
+
+        div.classList = "div";
+        div.classList = "comentario"
+        nome.innerHTML = `<b>Nome: </b>${comentario.name.replace(/\n/g,'')}`;
+        email.innerHTML = `<b>Email: </b>${comentario.email.replace(/\n/g,'')}`;
+        mensagem.innerText = comentario.body.replace(/\n/g,'');
+
+        div.appendChild(nome);
+        div.appendChild(mensagem);
+        div.appendChild(email);
+        modal.appendChild(div);
+    });
+}
+
+
+
+const fechar = ()=>{
+    document.getElementById('modal').style.display = "none";
 }

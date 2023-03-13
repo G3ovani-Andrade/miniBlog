@@ -1,3 +1,1 @@
-projeto de blog com  Async
-Promises
-Operadores Rest e Spread
+projeto de blog com AsyncPromises, Operadores Rest e Spread

@@ -1,0 +1,1 @@
+Será usado para passar um número indeterminado de parâmetros em uma função, no caso se tivermos function soma(a,b,...args), tudo que vir após o ... vai virar um array de parâmetros

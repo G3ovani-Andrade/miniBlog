@@ -1,0 +1,1 @@
+Podemos usar para fazer cópias de arrays e strings, mandar um array como argumento espalhados, adicionar propriedades em um array de objetos, adicionar itens ao array e mesclar arrays.

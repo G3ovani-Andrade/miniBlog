@@ -1,0 +1,12 @@
+Representa a resposta de uma operação, podendo apresentar falha ou conclusão
+estados:
+pending- não foi realizada nem rejeitada
+fulfilled- concluida com sucesso
+reject: - ocorrência de falha
+
+métodos:
+resolve: retorna o conteúdo da soluçâo da promessa
+reject: retorna o conteúdo do erro da promessa
+then: executado se tivermos sucesso
+catch: executado se tivermos erro
+finally: executado no final, tendo sucesso ou nâo

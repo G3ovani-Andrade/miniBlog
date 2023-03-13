@@ -1,0 +1,2 @@
+async e await: usado para criar funções assíncronas, await faz com que algo seja esperado ou espere;
+pode ser usado em inserção de banco de dados, e busca de algo, como usuário em um login
